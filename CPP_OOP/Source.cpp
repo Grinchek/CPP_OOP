@@ -1,9 +1,10 @@
 #include <iostream>
+#include <random>
 
 using namespace std;
 
 void main() {
-	bool ex = false;
+	/*bool ex = false;
 	int enter = 0;
 	int a = 10;
 	while (!ex) {
@@ -108,7 +109,67 @@ void main() {
 			break;
 
 		}
+	}*/
+srand(time(NULL));
+//int arr[10];
+//int sum = 0;
+//for (int i = 0; i < 10; i++) {
+//	arr[i] =-100+(rand()%200);
+//}
+//for (int n : arr) {
+//	cout << n << "\n";
+//}
+//for (int i = 0; i < 10; i++) {
+//	if (arr[i] < 0) {
+//		sum += arr[i];
+//	}
+//}
+//cout << sum;
+
+//int arr[10];
+//int max = 0;
+//int min = 0;
+//for (int i = 0; i < 10; i++) {
+//	arr[i] =-100+(rand()%200);
+//}
+//for (int n : arr) {
+//	cout << n << "\n";
+//}
+//for (int i = 0; i < 10; i++) {
+//	if (arr[i] < min) {
+//		min = arr[i];
+//	}
+//	else if (arr[i] > max) {
+//		max = arr[i];
+//	}
+//}
+//cout << "max" << max<<"\n";
+//cout << "min" << min<<"\n";
+
+int arr[10];
+int first = 0;
+int last = 0;
+for (int i = 0; i < 10; i++) {
+	arr[i] =-100+(rand()%200);
+}
+for (int n : arr) {
+	cout << n << "\n";
+}
+for (int i = 0; i < 10; i++) {
+	if (arr[i] < 0) {
+		first = arr[i];
+		i = 10;
 	}
 
+}
+for (int i = 0; i < 10; i++) {
+		if (arr[i] > 0) {
+			last = arr[i];
+	}
+}
+{
 
+}
+cout << "first" << first<<"\n";
+cout << "last" << last<<"\n";
 }
