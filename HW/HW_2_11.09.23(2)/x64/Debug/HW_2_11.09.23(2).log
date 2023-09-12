@@ -1,0 +1,4 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\HW_2_11.09.23(2)\source.cpp(6,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\HW_2_11.09.23(2)\source.cpp(86,14): warning C4309: 'initializing': truncation of constant value
+  HW_2_11.09.23(2).vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\HW_2_11.09.23(2).exe
