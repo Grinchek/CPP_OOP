@@ -1,3 +1,0 @@
-﻿  source.cpp
-C:\Users\User\Desktop\CPP\HW_1\HW_1\source.cpp(5,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  HW_1.vcxproj -> C:\Users\User\Desktop\CPP\HW_1\x64\Debug\HW_1.exe

@@ -1,0 +1,4 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\HW_1\source.cpp(5,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  LINK : C:\Users\User\Desktop\CPP\HW\x64\Debug\HW_1.exe not found or not built by the last incremental link; performing full link
+  HW_1.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\HW_1.exe
