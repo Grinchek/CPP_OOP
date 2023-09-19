@@ -1,0 +1,5 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Function2(15.09.23)_2\source.cpp(20,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\Function2(15.09.23)_2\source.cpp(21,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Function2(15.09.23)_2\source.cpp(57,51): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Function2(15.09.23)_2.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Function2(15.09.23)_2.exe

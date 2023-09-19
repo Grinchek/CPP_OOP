@@ -1,0 +1,6 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Sort(HW_18.09.23)\source.cpp(19,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\Sort(HW_18.09.23)\source.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Sort(HW_18.09.23)\source.cpp(178): warning C4715: 'SearchNeg': not all control paths return a value
+C:\Users\User\Desktop\CPP\HW\Sort(HW_18.09.23)\source.cpp(186): warning C4715: 'SearchNegRev': not all control paths return a value
+  Sort(HW_18.09.23).vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Sort(HW_18.09.23).exe
