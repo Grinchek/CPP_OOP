@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <random>
 
 using namespace std;
 
@@ -11,8 +12,11 @@ void FirstTask(int arr[], int size, int variant=1);
 int SearchNeg(int arr[],int size);
 int SearchNegRev(int arr[], int size);
 void SortInRange(int arr[], int size, int start, int end);
+void QuickSort(int arr[], int b, int e);
+int BinarySearch(int arr[], int size, int key);
 
 void main() {
+	srand(time(NULL));
 	//===============================#1=======================
 		/*1. Дан масив чисел розмірністю 10 елементів. Написа-
 	ти функцію, яка сортує масив за зростанням або за
@@ -45,18 +49,29 @@ void main() {
 	ментів (найлівішого від'ємного елемента і найправі-
 	шого від'ємного елемента) і впорядкувати елементи,
 	що знаходяться між ними.*/
-	const int size = 10;
+	/*const int size = 10;
 	int arr[size];
 	for (int i = 0; i < size; i++) {
-		arr[i] =-20+ rand() % 40;
+		arr[i] =-100+ rand() % 200;
 	}
 	for (auto item : arr) {
 	cout << item << " ";
 	}
 	cout << "\n";
-	int start = SearchNeg(arr, size);
-	int end = SearchNegRev(arr, size);
-	SortInRange(arr, size, start, end);
+	QuickSort(arr,0,size-1);
+	cout<<BinarySearch(arr,size,92)<<"\n";
+	for (auto item : arr) {
+		cout << item << " ";
+	}
+	cout << "\n";*/
+	//QuickSort(arr, 0, 9);
+	//for (auto item : arr) {
+	//	cout << item << " ";
+	//}
+	//cout << "\n";
+	//int start = SearchNeg(arr, size);
+	//int end = SearchNegRev(arr, size);
+	//SortInRange(arr, size, start, end);
 	// // ===============================#2=======================
 	//int key, idx;
 	//const int size = 50;
@@ -214,4 +229,40 @@ void SortInRange(int arr[], int size, int start, int end) {
 		cout << arr[i] << " ";
 	}
 
+}
+void QuickSort(int arr[], int b, int e) {
+	int i = b, j = e;
+	int tmp, p;
+	p = arr[(b + e) / 2];
+	do {
+		while (arr[i] < p)i++;
+		while (arr[j] > p)j--;
+		if (i <= j) {
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	} while (i <= j);
+	if (b < j) QuickSort(arr, b, j);
+	if (i < e) QuickSort(arr, i, e);
+}
+int BinarySearch(int arr[], int size, int key) {
+	int b = 0, e = size - 1;
+	while (true) {
+		int p = (b + e) / 2;
+		if (key > arr[p]) {
+			b = p + 1;
+		}
+		else if (key < arr[p]) {
+			e = p - 1;
+		}
+		else if (key == arr[p]) {
+			return p;
+		}
+		if (b > e) {
+			return -1;
+		}
+	}
 }
