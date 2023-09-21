@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function2(15.09.23)_2", "Fu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sort(HW_18.09.23)", "Sort(HW_18.09.23)\Sort(HW_18.09.23).vcxproj", "{A929B620-D9B0-4C77-9646-13CB02BF6484}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20.09.23_Recusrsion_HW", "20.09.23_Recusrsion_HW\20.09.23_Recusrsion_HW.vcxproj", "{257FE130-5FA7-49EB-A2BA-DD274A79B063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{A929B620-D9B0-4C77-9646-13CB02BF6484}.Release|x64.Build.0 = Release|x64
 		{A929B620-D9B0-4C77-9646-13CB02BF6484}.Release|x86.ActiveCfg = Release|Win32
 		{A929B620-D9B0-4C77-9646-13CB02BF6484}.Release|x86.Build.0 = Release|Win32
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Debug|x64.ActiveCfg = Debug|x64
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Debug|x64.Build.0 = Debug|x64
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Debug|x86.ActiveCfg = Debug|Win32
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Debug|x86.Build.0 = Debug|Win32
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Release|x64.ActiveCfg = Release|x64
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Release|x64.Build.0 = Release|x64
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Release|x86.ActiveCfg = Release|Win32
+		{257FE130-5FA7-49EB-A2BA-DD274A79B063}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
