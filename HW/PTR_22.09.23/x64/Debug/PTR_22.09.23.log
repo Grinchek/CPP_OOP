@@ -1,0 +1,4 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\PTR_22.09.23\source.cpp(13,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\PTR_22.09.23\source.cpp(14,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  PTR_22.09.23.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\PTR_22.09.23.exe
