@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\Users\User\Desktop\CPP\HW\02.11_Type_overloading\Source.cpp(340,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  02.11_Type_overloading.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\02.11_Type_overloading.exe

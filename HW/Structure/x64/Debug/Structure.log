@@ -1,0 +1,3 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Structure\source.cpp(70,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Structure.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Structure.exe

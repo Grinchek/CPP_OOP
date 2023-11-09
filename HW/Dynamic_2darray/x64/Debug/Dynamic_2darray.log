@@ -1,0 +1,4 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Dynamic_2darray\source.cpp(20,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\Dynamic_2darray\source.cpp(21,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Dynamic_2darray.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Dynamic_2darray.exe
