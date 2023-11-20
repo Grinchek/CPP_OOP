@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\User\Desktop\CPP\HW\STL_vector\Source.cpp(299,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\STL_vector\Source.cpp(300,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  STL_vector.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\STL_vector.exe

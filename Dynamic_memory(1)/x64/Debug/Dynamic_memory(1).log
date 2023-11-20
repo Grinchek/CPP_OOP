@@ -1,0 +1,5 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Dynamic_memory(1)\source.cpp(12,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\Dynamic_memory(1)\source.cpp(13,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Dynamic_memory(1)\source.cpp(51,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Dynamic_memory(1).vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Dynamic_memory(1).exe

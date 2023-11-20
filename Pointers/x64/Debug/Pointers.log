@@ -1,0 +1,7 @@
+﻿  source.cpp
+C:\Users\User\Desktop\CPP\HW\Pointers\source.cpp(23,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Desktop\CPP\HW\Pointers\source.cpp(24,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Pointers\source.cpp(97,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Pointers\source.cpp(117,24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Desktop\CPP\HW\Pointers\source.cpp(111): warning C4715: 'Min': not all control paths return a value
+  Pointers.vcxproj -> C:\Users\User\Desktop\CPP\HW\x64\Debug\Pointers.exe
