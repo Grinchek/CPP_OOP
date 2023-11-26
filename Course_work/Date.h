@@ -15,6 +15,10 @@ public:
 	Date(int y, int m, int d);
 	void IncrementDate();
 	void DecrementDate();
+	bool IsValide();
+	int GetYear();
+	int GetMonth();
+	int GetDay();
 	friend ostream& operator << (ostream& out, const Date& date);
 	friend bool operator ==(Date& date1, Date& date2);
 	friend bool operator !=(Date& date1, Date& date2);

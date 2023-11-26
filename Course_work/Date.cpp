@@ -181,6 +181,18 @@ void Date::DecrementDate() {
 		break;
 	}
 }
+bool Date::IsValide() {
+	return (m_year > 0 && m_month > 0 && m_day > 0);
+}
+int Date::GetYear() {
+	return m_year;
+}
+int Date::GetMonth() {
+	return m_month;
+}
+int Date::GetDay() {
+	return m_day;
+}
 void Date::operator += (int n_day) {
 	for (int i = 0; i < n_day; i++) {
 		IncrementDate();

@@ -2,6 +2,7 @@
 #include"Service.h"
 #include<vector>
 #include <conio.h>
+#include<fstream>
 class Post
 {
 private:
@@ -9,6 +10,18 @@ private:
 	vector<Service>  complited;
 public:
 	Post() :accepted(0), complited(0){ }
-	void Accept();
+	void ShowAccepted();
+	void ShowComplited();
+	Service Feel();
+	void Accept(Service item);
+	vector<int> SearchByName(vector<Service>& vec);
+	int GetAcceptedSize();
+	int GetComplitedSize();
+	vector<Service> GetAcceptedList();
+	vector<Service> GetComplitedList();
+	void GetFromFileAccept();
+	void WrteToFileAccept();
+	void GetFromFileCompl();
+	void WrteToFileCompl();
 };
 

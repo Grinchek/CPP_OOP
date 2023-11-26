@@ -8,8 +8,15 @@ void Menu::Gotoxy(int x, int y) {
 		coord.Y = y;
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
-
 void Menu::MainMenu() {
+	p1.GetFromFileAccept();
+	p1.GetFromFileCompl();
+	HomePage(); 
+	p1.WrteToFileAccept();
+	p1.WrteToFileCompl();
+
+}
+void Menu::HomePage() {
 	
 	int menu_item = 0, run, x = 1;
 	bool running=true;
@@ -30,19 +37,19 @@ void Menu::MainMenu() {
 		if (GetAsyncKeyState(VK_DOWN) && x != 11) //down button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x++;
+			x<3?x++:x=1;
 			Gotoxy(0, x); cout << "->";
-			menu_item++;
+			menu_item<2?menu_item++:menu_item=0;
 			continue;
 
 		}
 
-		if (GetAsyncKeyState(VK_UP) && x != 7) //up button pressed
+		if (GetAsyncKeyState(VK_UP)) //up button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x--;
+			x>1?x--:x=3;
 			Gotoxy(0, x); cout << "->";
-			menu_item--;
+			menu_item>0?menu_item--:menu_item=2;
 			continue;
 		}
 
@@ -53,6 +60,7 @@ void Menu::MainMenu() {
 			case 0: {
 				AllServices();
 				running=false;
+				HomePage();
 				break;
 			}
 			case 1: {
@@ -69,7 +77,7 @@ void Menu::MainMenu() {
 				cout << "software like Aldus PageMaker including versions of Lorem Ipsum." << endl;
 				system("pause");
 				running = false;
-				MainMenu();
+				HomePage();
 				break;
 			}
 
@@ -86,8 +94,6 @@ void Menu::MainMenu() {
 		}
 
 	}
-
-	Gotoxy(20, 21);
 }
 void Menu::AllServices() {
 	system("cls");
@@ -100,28 +106,29 @@ void Menu::AllServices() {
 	while (running)
 	{
 		Gotoxy(2, 1);  cout << "Acceptance of the order";
-		Gotoxy(2, 2);  cout << "Mark the execution";
-		Gotoxy(2, 3);  cout << "Edit an order";
-		Gotoxy(2, 4);  cout << "Back";
+		Gotoxy(2, 2);  cout << "Show orders";
+		Gotoxy(2, 3);  cout << "Mark the execution";
+		Gotoxy(2, 4);  cout << "Edit an order";
+		Gotoxy(2, 5);  cout << "Back";
 
 		system("pause>nul"); // the >nul bit causes it the print no message
 
-		if (GetAsyncKeyState(VK_DOWN) && x != 11) //down button pressed
+		if (GetAsyncKeyState(VK_DOWN)) //down button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x++;
+			x<5?x++:x=1;
 			Gotoxy(0, x); cout << "->";
-			menu_item++;
+			menu_item<4?menu_item++:menu_item=0;
 			continue;
 
 		}
 
-		if (GetAsyncKeyState(VK_UP) && x != 7) //up button pressed
+		if (GetAsyncKeyState(VK_UP)) //up button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x--;
+			x>1?x--:x=5;
 			Gotoxy(0, x); cout << "->";
-			menu_item--;
+			menu_item>0?menu_item--: menu_item=4;
 			continue;
 		}
 
@@ -130,21 +137,31 @@ void Menu::AllServices() {
 			switch (menu_item) {
 
 			case 0: {
+				Service tmp = p1.Feel();
+				bool pay = Payment();
+				if (pay) {
+					p1.Accept(tmp);
+					running = false;
+					system("cls");
+					cout << "Your order has been accepted." << endl;
+					system("pause");
+					break;
+				}
+				else {
+					system("cls");
+					cout << "Your order not accepted." << endl;
+					system("pause");
+					running = false;
+					break;
+				}
+					
 				
-				p1.Accept();
-				running = false;
-				system("cls");
-				Gotoxy(0, 2); cout << "->";
-				Gotoxy(2, 1); cout << "Wold you like to pay for parcel now?";
-				Gotoxy(2, 2); cout << "Yes";
-				Gotoxy(2, 3); cout << "No";
-				break;
+					
 			}
 
 
 			case 1: {
-				Gotoxy(20, 16);
-				cout << "Good bye!!";
+				ShowOrders();
 				running = false;
 				break;
 			}
@@ -155,7 +172,136 @@ void Menu::AllServices() {
 				break;
 			}
 			case 3: {
-				MainMenu();
+				running = false;
+				break;
+			}
+			case 4: {
+				running = false;
+				break;
+			}
+			default: {
+				break;
+			}
+			}
+		}
+
+		}
+
+	}
+bool Menu::Payment() {
+	system("cls");
+	int menu_item = 0, run, x = 2;
+	bool running = true;
+	Gotoxy(0, 2); cout << "->";
+	
+	while (running)
+	{
+		Gotoxy(2, 1); cout << "Wold you like to pay for parcel?";
+		Gotoxy(2, 2); cout << "Yes";
+		Gotoxy(2, 3); cout << "No";
+
+		system("pause>nul"); // the >nul bit causes it the print no message
+
+		if (GetAsyncKeyState(VK_DOWN)) //down button pressed
+		{
+			Gotoxy(0, x); cout << "  ";
+			x<3?x++:x=2;
+			Gotoxy(0, x); cout << "->";
+			menu_item<1?menu_item++: menu_item=0;
+			continue;
+
+		}
+
+		if (GetAsyncKeyState(VK_UP)) //up button pressed
+		{
+			Gotoxy(0, x); cout << "  ";
+			x>2?x--:x=3;
+			Gotoxy(0, x); cout << "->";
+			menu_item>0?menu_item--: menu_item=1;
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN)) { // Enter key pressed
+
+			switch (menu_item) {
+
+			case 0: {
+				return true;
+				running = false;
+				break;
+			}
+			case 1: {
+				return false;
+				running = false;
+				break;
+			}
+			}
+
+		}
+
+	}
+}
+void Menu::ShowOrders() {
+	system("cls");
+	int menu_item = 0, run, x = 1;
+	bool running = true;
+	Gotoxy(6, 0); cout << "~~Orders~~";
+	Gotoxy(0, 1); cout << "->";
+
+	while (running)
+	{
+		Gotoxy(2, 1); cout << "Show accepted orders";
+		Gotoxy(2, 2); cout << "Show complited orders";
+		Gotoxy(2, 3); cout << "Search order by customer";
+
+		system("pause>nul"); // the >nul bit causes it the print no message
+
+		if (GetAsyncKeyState(VK_DOWN)) //down button pressed
+		{
+			Gotoxy(0, x); cout << "  ";
+			x < 3 ? x++ : x = 1;
+			Gotoxy(0, x); cout << "->";
+			menu_item < 2 ? menu_item++ : menu_item = 0;
+			continue;
+
+		}
+
+		if (GetAsyncKeyState(VK_UP)) //up button pressed
+		{
+			Gotoxy(0, x); cout << "  ";
+			x > 1 ? x-- : x = 3;
+			Gotoxy(0, x); cout << "->";
+			menu_item > 0 ? menu_item-- : menu_item = 1;
+			continue;
+		}
+
+		if (GetAsyncKeyState(VK_RETURN)) { // Enter key pressed
+
+			switch (menu_item) {
+
+			case 0: {
+				cout << endl;
+				p1.ShowAccepted();
+				system("pause");
+				running = false;
+				break;
+			}
+			case 1: {
+				cout << endl;
+				p1.ShowComplited();
+				system("pause");
+				running = false;
+				break;
+			}
+			case 2: {
+				vector <Service> tmp = p1.GetAcceptedList();
+				vector<int> size= p1.SearchByName(tmp);
+				for (int item:size) {
+					tmp[item].ShowInfo();
+				}
+
+				
+				system("pause");
 				running = false;
 				break;
 			}

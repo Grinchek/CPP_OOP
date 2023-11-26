@@ -10,7 +10,10 @@ class Menu {
 public:
 	void Gotoxy(int x, int y);
 	void MainMenu();
+	void HomePage();
 	void AllServices();
+	bool Payment();
+	void ShowOrders(); 
 
 };
 
