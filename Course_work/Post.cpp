@@ -55,6 +55,12 @@ Service Post::Feel() {
 void Post::Accept(Service item) {
 	accepted.push_back(item);
 }
+void Post::Complit(Service item) {
+    complited.push_back(item);
+}
+void Post::DeleteElement(vector<Service>& vec,int index) {
+    vec.erase(vec.begin()+index);
+}
 vector<int> Post::SearchByName(vector<Service>& vec) {
     cout << "Enter name: "; string sch; getline(cin, sch);
     vector<int>idx;
@@ -71,7 +77,7 @@ int Post::GetAcceptedSize() {
 int Post::GetComplitedSize() {
 	return complited.size();
 }
-vector<Service> Post::GetAcceptedList(){
+vector<Service>& Post::GetAcceptedList(){
     return accepted;
 }
 vector<Service> Post::GetComplitedList(){
@@ -129,7 +135,7 @@ void Post::WrteToFileAccept(){
 }
 void Post::GetFromFileCompl(){
     fstream file;
-    file.open("Complidet.txt", ios_base::in);
+    file.open("Complited.txt", ios_base::in);
     if (file.is_open()) {
         string line;
         int count = 0;
@@ -155,7 +161,7 @@ void Post::GetFromFileCompl(){
             getline(file, line);
             d = stoi(line);
             Date acc_date(y, m, d);
-            accepted.push_back(Service(name, surname, del_addr, acc_date));
+            complited.push_back(Service(name, surname, del_addr, acc_date));
             i++;
         }
     }
@@ -163,7 +169,6 @@ void Post::GetFromFileCompl(){
 }
 void Post::WrteToFileCompl(){
     fstream file;
-    file.open("Complited.txt", ios_base::trunc);
     file.open("Complited.txt", ios_base::out);
     if (file.is_open()) {
         for (auto item : complited) {

@@ -14,10 +14,12 @@ public:
 	void ShowComplited();
 	Service Feel();
 	void Accept(Service item);
+	void Complit(Service item);
+	void DeleteElement(vector<Service>& vec,int index);
 	vector<int> SearchByName(vector<Service>& vec);
 	int GetAcceptedSize();
 	int GetComplitedSize();
-	vector<Service> GetAcceptedList();
+	vector<Service>& GetAcceptedList();
 	vector<Service> GetComplitedList();
 	void GetFromFileAccept();
 	void WrteToFileAccept();

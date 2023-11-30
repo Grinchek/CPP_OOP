@@ -109,16 +109,17 @@ void Menu::AllServices() {
 		Gotoxy(2, 2);  cout << "Show orders";
 		Gotoxy(2, 3);  cout << "Mark the execution";
 		Gotoxy(2, 4);  cout << "Edit an order";
-		Gotoxy(2, 5);  cout << "Back";
+		Gotoxy(2, 5);  cout << "Cancel an order";
+		Gotoxy(2, 6);  cout << "Back";
 
 		system("pause>nul"); // the >nul bit causes it the print no message
 
 		if (GetAsyncKeyState(VK_DOWN)) //down button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x<5?x++:x=1;
+			x<6?x++:x=1;
 			Gotoxy(0, x); cout << "->";
-			menu_item<4?menu_item++:menu_item=0;
+			menu_item<5?menu_item++:menu_item=0;
 			continue;
 
 		}
@@ -126,9 +127,9 @@ void Menu::AllServices() {
 		if (GetAsyncKeyState(VK_UP)) //up button pressed
 		{
 			Gotoxy(0, x); cout << "  ";
-			x>1?x--:x=5;
+			x>1?x--:x=6;
 			Gotoxy(0, x); cout << "->";
-			menu_item>0?menu_item--: menu_item=4;
+			menu_item>0?menu_item--: menu_item=5;
 			continue;
 		}
 
@@ -138,8 +139,6 @@ void Menu::AllServices() {
 
 			case 0: {
 				Service tmp = p1.Feel();
-				bool pay = Payment();
-				if (pay) {
 					p1.Accept(tmp);
 					running = false;
 					system("cls");
@@ -147,27 +146,19 @@ void Menu::AllServices() {
 					system("pause");
 					break;
 				}
-				else {
-					system("cls");
-					cout << "Your order not accepted." << endl;
-					system("pause");
-					running = false;
-					break;
-				}
-					
-				
-					
-			}
-
-
 			case 1: {
 				ShowOrders();
 				running = false;
 				break;
 			}
 			case 2: {
-				Gotoxy(20, 16);
-				cout << "Good bye!!";
+				system("cls");
+				vector<Service> temp =p1.GetAcceptedList();
+				vector<int>items = p1.SearchByName(temp);
+				for (int idx : items) {
+					p1.Complit(temp[idx]);
+					p1.DeleteElement(p1.GetAcceptedList(), idx);
+				}
 				running = false;
 				break;
 			}
@@ -176,6 +167,15 @@ void Menu::AllServices() {
 				break;
 			}
 			case 4: {
+				vector<Service> temp = p1.GetAcceptedList();
+				vector<int>items = p1.SearchByName(temp);
+				for (int idx : items) {
+					p1.DeleteElement(p1.GetAcceptedList(), idx);
+				}
+				running = false;
+				break;
+			}
+			case 5: {
 				running = false;
 				break;
 			}
@@ -294,7 +294,7 @@ void Menu::ShowOrders() {
 				break;
 			}
 			case 2: {
-				vector <Service> tmp = p1.GetAcceptedList();
+				vector <Service>& tmp = p1.GetAcceptedList();
 				vector<int> size= p1.SearchByName(tmp);
 				for (int item:size) {
 					tmp[item].ShowInfo();
