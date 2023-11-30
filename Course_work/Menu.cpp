@@ -82,7 +82,6 @@ void Menu::HomePage() {
 			}
 
 			case 2: {
-				Gotoxy(20, 16);
 				cout << "Good bye!!"<<endl;
 				running = false;
 				break;
@@ -163,6 +162,12 @@ void Menu::AllServices() {
 				break;
 			}
 			case 3: {
+				vector<Service> temp = p1.GetAcceptedList();
+				vector<int>items = p1.SearchByName(temp);
+				for (int idx : items) {
+					p1.Complit(temp[idx]);
+					p1.DeleteElement(p1.GetAcceptedList(), idx);
+				}
 				running = false;
 				break;
 			}

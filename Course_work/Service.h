@@ -20,6 +20,7 @@ public:
 		Date temp = date_of_admission;
 		temp(3);
 		date_of_delivery = temp;
+
 	}
 	void ShowInfo() const;
 	bool IsValid();
