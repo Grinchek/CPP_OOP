@@ -12,6 +12,7 @@ public:
 	Post() :accepted(0), complited(0){ }
 	void ShowAccepted();
 	void ShowComplited();
+	Date SetDate();
 	Service Feel();
 	void Accept(Service item);
 	void Complit(Service item);

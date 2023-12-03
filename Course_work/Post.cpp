@@ -10,42 +10,57 @@ void Post::ShowComplited(){
         item.ShowInfo();
     }
 }
+Date Post::SetDate() {
+    bool ex = false;
+    Date date;
+    int y, m, d;
+    while(!ex) {
+        try {
+            cout << "Date of admission (YYYY:MM:DD):\n";
+
+            cout << "Year: ";
+            cin >> y;
+            if (cin.fail() || y <= 0 || y > 3000) {
+                throw runtime_error("Invalid input. Please enter a valid integer for the year.");
+            }
+
+            cout << "Month: ";
+            cin >> m;
+            if (cin.fail() || m <= 0 || m > 12) {
+                throw runtime_error("Invalid input. Please enter a valid integer for the month.");
+            }
+
+            cout << "Day: ";
+            cin >> d;
+            if (cin.fail() || d <= 0 || d > 31) {
+                throw runtime_error("Invalid input. Please enter a valid integer for the day.");
+            }
+
+            cin.ignore();
+            
+        }
+        catch (const exception& e) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << e.what() << endl;
+        }
+        Date temp(y, m, d);
+        date=temp;
+        if (date.IsValide()) {
+            ex = true;
+
+        }
+    }
+ 
+    return date;
+    
+}
 Service Post::Feel() {
             system("cls");
             cout << "Name: ";string name;getline(cin, name);
             cout << "Surname: ";string surname;getline(cin, surname);
             cout << "Delivery address: ";string del_addr;getline(cin, del_addr);
-            int y, m, d;
-            bool validInput = false;
-            do {
-                cout << "Date of admission (YYYY:MM:DD):\n ";
-                cout << "Year: ";
-                if (!(cin >> y) || cin.peek() != '\n') {
-                    cin.clear();
-                    cin.ignore();
-                    cout << "Invalid input. Please enter a valid integer for the year.\n";
-                    continue;
-                }
-                cout << "Month: ";
-                if (!(cin >> m) || cin.peek() != '\n') {
-                    cin.clear();
-                    cin.ignore();
-                    cout << "Invalid input. Please enter a valid integer for the month.\n";
-                    continue;
-                }
-                cout << "Day: ";
-                if (!(cin >> d) || cin.peek() != '\n') {
-                    cin.clear();
-                    cin.ignore();
-                    cout << "Invalid input. Please enter a valid integer for the day.\n";
-                    continue;
-                }
-                cin.ignore();
-                validInput = true;
-
-            } while (!validInput);
-
-            Date date(y, m, d);
+            Date date = SetDate();
             Service temp(name, surname, del_addr, date);
 
             if (temp.IsValid()) {
@@ -62,7 +77,7 @@ void Post::DeleteElement(vector<Service>& vec,int index) {
     vec.erase(vec.begin()+index);
 }
 vector<int> Post::SearchByName(vector<Service>& vec) {
-    cout << "Enter name: "; string sch; getline(cin, sch);
+    cout << "\nEnter name: "; string sch; getline(cin, sch);
     vector<int>idx;
     for (int i = 0; i < vec.size(); i++) {
         if (sch == vec[i].GetName()) {

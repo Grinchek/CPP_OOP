@@ -82,7 +82,7 @@ void Menu::HomePage() {
 			}
 
 			case 2: {
-				cout << "Good bye!!"<<endl;
+				cout << "\nGood bye!!"<<endl;
 				running = false;
 				break;
 			}
