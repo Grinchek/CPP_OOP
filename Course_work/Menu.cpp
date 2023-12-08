@@ -276,7 +276,7 @@ void Menu::ShowOrders() {
 			Gotoxy(0, x); cout << "  ";
 			x > 1 ? x-- : x = 3;
 			Gotoxy(0, x); cout << "->";
-			menu_item > 0 ? menu_item-- : menu_item = 1;
+			menu_item > 0 ? menu_item-- : menu_item = 2;
 			continue;
 		}
 
@@ -304,8 +304,6 @@ void Menu::ShowOrders() {
 				for (int item:size) {
 					tmp[item].ShowInfo();
 				}
-
-				
 				system("pause");
 				running = false;
 				break;
