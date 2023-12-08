@@ -162,11 +162,11 @@ void Menu::AllServices() {
 				break;
 			}
 			case 3: {
-				vector<Service> temp = p1.GetAcceptedList();
-				vector<int>items = p1.SearchByName(temp);
+				vector<Service> accepted = p1.GetAcceptedList();
+				vector<int>items = p1.SearchByName(accepted);
 				for (int idx : items) {
-					p1.Complit(temp[idx]);
-					p1.DeleteElement(p1.GetAcceptedList(), idx);
+					Service temp=p1.Feel();
+					p1.EditElement(p1.GetAcceptedList(), idx,temp);
 				}
 				running = false;
 				break;

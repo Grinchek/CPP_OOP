@@ -13,7 +13,7 @@ void Post::ShowComplited(){
 Date Post::SetDate() {
     bool ex = false;
     Date date;
-    int y, m, d;
+    int y=0, m=0, d=0;
     while(!ex) {
         try {
             cout << "Date of admission (YYYY:MM:DD):\n";
@@ -75,6 +75,9 @@ void Post::Complit(Service item) {
 }
 void Post::DeleteElement(vector<Service>& vec,int index) {
     vec.erase(vec.begin()+index);
+}
+void Post::EditElement(vector<Service>& vec, int index,Service elem) {
+    vec[index] = elem;
 }
 vector<int> Post::SearchByName(vector<Service>& vec) {
     cout << "\nEnter name: "; string sch; getline(cin, sch);

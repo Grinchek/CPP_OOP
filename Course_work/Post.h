@@ -17,6 +17,7 @@ public:
 	void Accept(Service item);
 	void Complit(Service item);
 	void DeleteElement(vector<Service>& vec,int index);
+	void EditElement(vector<Service>& vec, int index, Service elem);
 	vector<int> SearchByName(vector<Service>& vec);
 	int GetAcceptedSize();
 	int GetComplitedSize();
